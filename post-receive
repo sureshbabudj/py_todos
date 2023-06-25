@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Set the app directory
+APP_DIR=$(pwd)
+
+# Set the virtual environment directory
+VENV_DIR="$APP_DIR/.venv"
+
+# Set the WSGI server restart command (e.g., gunicorn)
+RESTART_CMD="sudo systemctl restart gunicorn.service"
+
+# Change to the app directory
+cd $APP_DIR
+
+# Activate the virtual environment
+source $VENV_DIR/bin/activate
+
+# Pull the latest changes from the Git repository
+git --work-tree=$APP_DIR --git-dir=/path/to/your/repo.git checkout -f
+
+# Install dependencies (if needed)
+pip install -r requirements.txt
+
+# Restart the WSGI server
+$RESTART_CMD

@@ -1,0 +1,26 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pyi
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+.venv/
+
+# Flask
+instance/
+
+# Editor/IDE
+.vscode/
+*.swp
+*.swo
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
